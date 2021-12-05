@@ -151,7 +151,7 @@ Scenario: Send booking details via SMS
 	Given Print Ticket button is pressed
 	When Valid phone number is provided
 	And Send button is pressed
-	Then Send SMS to given number.
+	Then Success message is shown and SMS is sent to the phone number.
 
 	@Send_SMS_Unsuccessful
 Scenario: When invalid phone number is provided.
@@ -161,8 +161,7 @@ Scenario: When invalid phone number is provided.
 	Then Error message shall be shown.
 
 		Examples: 
- | name                   | Seat Count | Msg                                                  |
- | No seats               | 0          | ERROR: Please select a seat.                         |
- | Invalid seat selection | 12         | ERROR: Max 10 seats allowed to book.                 |
- | Valid number of seats  | 4          | SUCCESS: Seat selection Done, proceeding to payment. |
+ | name          | Valid Phone number | Msg                                            |
+ | Invalid phone | N                  | ERROR: Please provide a correct phone number.  |
+ | Valid phone   | Y                  | SUCCESS: Booking details sent to given number. |
 

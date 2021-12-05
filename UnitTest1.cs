@@ -13,8 +13,8 @@ namespace RestSharpDemo
         [TestMethod]
         public void TestMethodListUser()
         {
-            var client = new RestClient("https://reqres.in/");
-            var request = new RestRequest("api/users/{id}", Method.GET);
+            RestClient client = new RestClient("https://reqres.in/");
+            RestRequest request = new RestRequest("api/users/{id}", Method.GET);
             request.AddUrlSegment("id", 2);
 
             var response = client.Execute(request);
@@ -25,8 +25,8 @@ namespace RestSharpDemo
         [TestMethod]
         public void TestMethodNoUser()
         {
-            var client = new RestClient("https://reqres.in/");
-            var request = new RestRequest("api/users/{id}", Method.GET);
+            RestClient client = new RestClient("https://reqres.in/");
+            RestRequest request = new RestRequest("api/users/{id}", Method.GET);
             request.AddUrlSegment("id", 23);
 
             var response = client.Execute(request);
@@ -37,8 +37,8 @@ namespace RestSharpDemo
         [TestMethod]
         public void TestMethodListUsers()
         {
-            var client = new RestClient("https://reqres.in/");
-            var request = new RestRequest("api/users", Method.GET);
+            RestClient client = new RestClient("https://reqres.in/");
+            RestRequest request = new RestRequest("api/users", Method.GET);
 
             var response = client.Execute(request);
             NUnit.Framework.Assert.That((int)response.StatusCode, Is.EqualTo(200));
@@ -48,8 +48,8 @@ namespace RestSharpDemo
         [TestMethod]
         public void TestMethodSingleResource()
         {
-            var client = new RestClient("https://reqres.in/");
-            var request = new RestRequest("api/unknown/{id}", Method.GET);
+            RestClient client = new RestClient("https://reqres.in/");
+            RestRequest request = new RestRequest("api/unknown/{id}", Method.GET);
             request.AddUrlSegment("id", 2);
 
             var response = client.Execute(request);
@@ -60,8 +60,8 @@ namespace RestSharpDemo
         [TestMethod]
         public void TestMethodNoResource()
         {
-            var client = new RestClient("https://reqres.in/");
-            var request = new RestRequest("api/unknown/{id}", Method.GET);
+            RestClient client = new RestClient("https://reqres.in/");
+            RestRequest request = new RestRequest("api/unknown/{id}", Method.GET);
             request.AddUrlSegment("id", 23);
 
             var response = client.Execute(request);
@@ -72,8 +72,8 @@ namespace RestSharpDemo
         [TestMethod]
         public void TestMethodCreateUser()
         {
-            var client = new RestClient("https://reqres.in/");
-            var request = new RestRequest("api/users/", Method.POST);
+            RestClient client = new RestClient("https://reqres.in/");
+            RestRequest request = new RestRequest("api/users/", Method.POST);
 
             request.RequestFormat = DataFormat.Json;
             request.AddParameter("name", "Test");
@@ -93,8 +93,8 @@ namespace RestSharpDemo
         [TestMethod]
         public void TestMethodDelete()
         {
-            var client = new RestClient("https://reqres.in/");
-            var request = new RestRequest("api/users/{id}", Method.DELETE);
+            RestClient client = new RestClient("https://reqres.in/");
+            RestRequest request = new RestRequest("api/users/{id}", Method.DELETE);
             request.AddUrlSegment("id", 2);
 
             var response = client.Execute(request);
@@ -106,8 +106,8 @@ namespace RestSharpDemo
         [TestMethod]
         public void TestMethodRegisterSuccesful()
         {
-            var client = new RestClient("https://reqres.in/");
-            var request = new RestRequest("api/register", Method.POST);
+            RestClient client = new RestClient("https://reqres.in/");
+            RestRequest request = new RestRequest("api/register", Method.POST);
             request.RequestFormat = DataFormat.Json;
             request.AddParameter("email", "eve.holt@reqres.in");
             request.AddParameter("password", "pistol");
@@ -120,8 +120,8 @@ namespace RestSharpDemo
         [TestMethod]
         public void TestMethodRegisterNotSuccesful()
         {
-            var client = new RestClient("https://reqres.in/");
-            var request = new RestRequest("api/register", Method.POST);
+            RestClient client = new RestClient("https://reqres.in/");
+            RestRequest request = new RestRequest("api/register", Method.POST);
             request.RequestFormat = DataFormat.Json;
             request.AddParameter("email", "eve.holt@reqres.in");
 
@@ -133,8 +133,8 @@ namespace RestSharpDemo
         [TestMethod]
         public void TestMethodLoginSuccesful()
         {
-            var client = new RestClient("https://reqres.in/");
-            var request = new RestRequest("api/login", Method.POST);
+            RestClient client = new RestClient("https://reqres.in/");
+            RestRequest request = new RestRequest("api/login", Method.POST);
             request.RequestFormat = DataFormat.Json;
             request.AddParameter("email", "eve.holt@reqres.in");
             request.AddParameter("password", "cityslicka");
