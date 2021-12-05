@@ -20,10 +20,10 @@ Scenario: Invalid data entered in User registration for ticket booking
 	Examples: 
  | name             | username | password | Msg                                                    |
  | Blank Username   |          | password | ERROR: The username field is empty.                    |
- | Blank Password   | admin    |          | ERROR: The password field is empty.                    |
- | invalid Password | admin    | $%GGH    | ERROR: Password doesnt follow the password policy.     |
+ | Blank Password   | test2    |          | ERROR: The password field is empty.                    |
+ | invalid Password | test2    | $%GGH    | ERROR: Password doesnt follow the password policy.     |
  | invalid username | test     | password | ERROR: Username already exists.                        |
- | valid username   | test1    | password | SUCCESS: User registration succesful.                  |
+ | valid credentials| test1    | password | SUCCESS: User registration succesful.                  |
 
  @Login_Successfull
 Scenario: Valid User login for ticket booking
@@ -43,7 +43,7 @@ Scenario: Invalid credentials entered in login for ticket booking
  | Blank Password   | admin    |          | ERROR: The password field is empty.                    |
  | invalid Password | admin    | $%GGH    | ERROR: Wrong password. Forgot passowrd?                |
  | invalid username | test     | password | ERROR: User does not exists.                           |
- | valid username   | test1    | password | SUCCESS: login succesful.                              |
+ | valid credentials| test1    | password | SUCCESS: login succesful.                              |
 
 
   @BookTickets_WithoutLogin
@@ -72,12 +72,12 @@ Scenario: No show is available
 	Then Display error message and keep seat selection button disabled
 
 	Examples: 
- | name              | Show  | Date    | Time   | Msg                                                   |
- | Blank             |       |         |        | ERROR: Please select a movie.                         |
- | Blank Date        | Movie |         |        | ERROR: Please select a time.                          |
- | Blank Show        | 12Dec | 2:00 AM |        | ERROR: Please select a movie/show.                    |
- | No show available | 12Dec | 2:00 AM | Movie1 | ERROR: Show selected, proceeding to seat selection. |
- | Blank Time        | 12Dec | 2:00 AM | Movie1 | SUCCESS: Show selected, proceeding to seat selection. |
+	Assumption : Shows with seats available >1 shall only be displayed for selection.
+ | name              | Show   | Date  | Time    | Msg                                                                   |
+ | Blank             |        |       |         | ERROR: Please select a movie.                                         |
+ | Blank Date        | Movie1 |       |         | ERROR: Please select a date.                                          |
+ | Blank Time        | Movie1 | 12Dec |         | ERROR: Please select a time.                                          |
+ | Valid inputs      | Movie1 | 12Dec | 2:00 AM | SUCCESS: Show selected, proceeding to seat selection.                 |
 
 
 

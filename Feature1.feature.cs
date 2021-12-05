@@ -20,7 +20,8 @@ namespace RestSharpDemo
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [TechTalk.SpecRun.FeatureAttribute("Login", Description="In order to book tickets in Ted cinemas user can either do registration or\r\ncan s" +
-        "imply book tickets without any login/ registration.", SourceFile="Feature1.feature", SourceLine=0)]
+        "imply book tickets without any login/ registration.\r\nLogin->MovieSelection->Seat" +
+        "Selection->Payment->printTickets->SMS", SourceFile="Feature1.feature", SourceLine=0)]
     public partial class LoginFeature
     {
         
@@ -36,7 +37,8 @@ namespace RestSharpDemo
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
             TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "", "Login", "In order to book tickets in Ted cinemas user can either do registration or\r\ncan s" +
-                    "imply book tickets without any login/ registration.", ProgrammingLanguage.CSharp, ((string[])(null)));
+                    "imply book tickets without any login/ registration.\r\nLogin->MovieSelection->Seat" +
+                    "Selection->Payment->printTickets->SMS", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -73,14 +75,14 @@ namespace RestSharpDemo
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Valid User registration for ticket booking", new string[] {
-                "Registarion_Successfull"}, SourceLine=6)]
+                "Registarion_Successfull"}, SourceLine=7)]
         public virtual void ValidUserRegistrationForTicketBooking()
         {
             string[] tagsOfScenario = new string[] {
                     "Registarion_Successfull"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Valid User registration for ticket booking", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 7
+#line 8
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -100,13 +102,13 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 8
+#line 9
  testRunner.Given("The user has provided correct details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 9
+#line 10
  testRunner.When("Login Registration page is presented", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 10
+#line 11
  testRunner.Then("Display successful registration message", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -128,7 +130,7 @@ this.ScenarioInitialize(scenarioInfo);
             argumentsOfScenario.Add("password", password);
             argumentsOfScenario.Add("Msg", msg);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Invalid data entered in User registration for ticket booking", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 14
+#line 15
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -148,13 +150,13 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 15
+#line 16
  testRunner.Given("The user has provided invalid details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 16
+#line 17
  testRunner.When("Login Registration page is presented", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 17
+#line 18
  testRunner.Then("Display Error Message on the Registration Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -162,59 +164,59 @@ this.ScenarioInitialize(scenarioInfo);
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Invalid data entered in User registration for ticket booking, Blank Username", new string[] {
-                "Registarion_Unsuccessfull"}, SourceLine=20)]
+                "Registarion_Unsuccessfull"}, SourceLine=21)]
         public virtual void InvalidDataEnteredInUserRegistrationForTicketBooking_BlankUsername()
         {
-#line 14
+#line 15
 this.InvalidDataEnteredInUserRegistrationForTicketBooking("Blank Username", "", "password", "ERROR: The username field is empty.", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Invalid data entered in User registration for ticket booking, Blank Password", new string[] {
-                "Registarion_Unsuccessfull"}, SourceLine=20)]
+                "Registarion_Unsuccessfull"}, SourceLine=21)]
         public virtual void InvalidDataEnteredInUserRegistrationForTicketBooking_BlankPassword()
         {
-#line 14
-this.InvalidDataEnteredInUserRegistrationForTicketBooking("Blank Password", "admin", "", "ERROR: The password field is empty.", ((string[])(null)));
+#line 15
+this.InvalidDataEnteredInUserRegistrationForTicketBooking("Blank Password", "test2", "", "ERROR: The password field is empty.", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Invalid data entered in User registration for ticket booking, invalid Password", new string[] {
-                "Registarion_Unsuccessfull"}, SourceLine=20)]
+                "Registarion_Unsuccessfull"}, SourceLine=21)]
         public virtual void InvalidDataEnteredInUserRegistrationForTicketBooking_InvalidPassword()
         {
-#line 14
-this.InvalidDataEnteredInUserRegistrationForTicketBooking("invalid Password", "admin", "$%GGH", "ERROR: Password doesnt follow the password policy.", ((string[])(null)));
+#line 15
+this.InvalidDataEnteredInUserRegistrationForTicketBooking("invalid Password", "test2", "$%GGH", "ERROR: Password doesnt follow the password policy.", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Invalid data entered in User registration for ticket booking, invalid username", new string[] {
-                "Registarion_Unsuccessfull"}, SourceLine=20)]
+                "Registarion_Unsuccessfull"}, SourceLine=21)]
         public virtual void InvalidDataEnteredInUserRegistrationForTicketBooking_InvalidUsername()
         {
-#line 14
+#line 15
 this.InvalidDataEnteredInUserRegistrationForTicketBooking("invalid username", "test", "password", "ERROR: Username already exists.", ((string[])(null)));
 #line hidden
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Invalid data entered in User registration for ticket booking, valid username", new string[] {
-                "Registarion_Unsuccessfull"}, SourceLine=20)]
-        public virtual void InvalidDataEnteredInUserRegistrationForTicketBooking_ValidUsername()
+        [TechTalk.SpecRun.ScenarioAttribute("Invalid data entered in User registration for ticket booking, valid credentials", new string[] {
+                "Registarion_Unsuccessfull"}, SourceLine=21)]
+        public virtual void InvalidDataEnteredInUserRegistrationForTicketBooking_ValidCredentials()
         {
-#line 14
-this.InvalidDataEnteredInUserRegistrationForTicketBooking("valid username", "test1", "password", "SUCCESS: User registration succesful.", ((string[])(null)));
+#line 15
+this.InvalidDataEnteredInUserRegistrationForTicketBooking("valid credentials", "test1", "password", "SUCCESS: User registration succesful.", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Valid User login for ticket booking", new string[] {
-                "Login_Successfull"}, SourceLine=27)]
+                "Login_Successfull"}, SourceLine=28)]
         public virtual void ValidUserLoginForTicketBooking()
         {
             string[] tagsOfScenario = new string[] {
                     "Login_Successfull"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Valid User login for ticket booking", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 28
+#line 29
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -234,13 +236,13 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 29
+#line 30
  testRunner.Given("The user has provided correct details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 30
+#line 31
  testRunner.When("Login page is presented", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 31
+#line 32
  testRunner.Then("Display successful Login message", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -262,7 +264,7 @@ this.ScenarioInitialize(scenarioInfo);
             argumentsOfScenario.Add("password", password);
             argumentsOfScenario.Add("Msg", msg);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Invalid credentials entered in login for ticket booking", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 34
+#line 35
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -282,13 +284,13 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 35
+#line 36
  testRunner.Given("The user has provided invalid details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 36
+#line 37
  testRunner.When("Login page is presented", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 37
+#line 38
  testRunner.Then("Display Error Message on the Login Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -296,59 +298,59 @@ this.ScenarioInitialize(scenarioInfo);
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Invalid credentials entered in login for ticket booking, Blank Username", new string[] {
-                "Login_Unsuccessfull"}, SourceLine=40)]
+                "Login_Unsuccessfull"}, SourceLine=41)]
         public virtual void InvalidCredentialsEnteredInLoginForTicketBooking_BlankUsername()
         {
-#line 34
+#line 35
 this.InvalidCredentialsEnteredInLoginForTicketBooking("Blank Username", "", "password", "ERROR: The username field is empty.", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Invalid credentials entered in login for ticket booking, Blank Password", new string[] {
-                "Login_Unsuccessfull"}, SourceLine=40)]
+                "Login_Unsuccessfull"}, SourceLine=41)]
         public virtual void InvalidCredentialsEnteredInLoginForTicketBooking_BlankPassword()
         {
-#line 34
+#line 35
 this.InvalidCredentialsEnteredInLoginForTicketBooking("Blank Password", "admin", "", "ERROR: The password field is empty.", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Invalid credentials entered in login for ticket booking, invalid Password", new string[] {
-                "Login_Unsuccessfull"}, SourceLine=40)]
+                "Login_Unsuccessfull"}, SourceLine=41)]
         public virtual void InvalidCredentialsEnteredInLoginForTicketBooking_InvalidPassword()
         {
-#line 34
+#line 35
 this.InvalidCredentialsEnteredInLoginForTicketBooking("invalid Password", "admin", "$%GGH", "ERROR: Wrong password. Forgot passowrd?", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Invalid credentials entered in login for ticket booking, invalid username", new string[] {
-                "Login_Unsuccessfull"}, SourceLine=40)]
+                "Login_Unsuccessfull"}, SourceLine=41)]
         public virtual void InvalidCredentialsEnteredInLoginForTicketBooking_InvalidUsername()
         {
-#line 34
+#line 35
 this.InvalidCredentialsEnteredInLoginForTicketBooking("invalid username", "test", "password", "ERROR: User does not exists.", ((string[])(null)));
 #line hidden
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Invalid credentials entered in login for ticket booking, valid username", new string[] {
-                "Login_Unsuccessfull"}, SourceLine=40)]
-        public virtual void InvalidCredentialsEnteredInLoginForTicketBooking_ValidUsername()
+        [TechTalk.SpecRun.ScenarioAttribute("Invalid credentials entered in login for ticket booking, valid credentials", new string[] {
+                "Login_Unsuccessfull"}, SourceLine=41)]
+        public virtual void InvalidCredentialsEnteredInLoginForTicketBooking_ValidCredentials()
         {
-#line 34
-this.InvalidCredentialsEnteredInLoginForTicketBooking("valid username", "test1", "password", "SUCCESS: login succesful.", ((string[])(null)));
+#line 35
+this.InvalidCredentialsEnteredInLoginForTicketBooking("valid credentials", "test1", "password", "SUCCESS: login succesful.", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("User wants to book tikcet without login", new string[] {
-                "BookTickets_WithoutLogin"}, SourceLine=48)]
+                "BookTickets_WithoutLogin"}, SourceLine=49)]
         public virtual void UserWantsToBookTikcetWithoutLogin()
         {
             string[] tagsOfScenario = new string[] {
                     "BookTickets_WithoutLogin"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("User wants to book tikcet without login", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 49
+#line 50
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -368,13 +370,13 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 50
+#line 51
  testRunner.Given("The user has selected continue without login", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 51
+#line 52
  testRunner.When("Login page is presented", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 52
+#line 53
  testRunner.Then("Navigate to Movie Information Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -382,14 +384,14 @@ this.ScenarioInitialize(scenarioInfo);
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Valid inputs in movie selection", new string[] {
-                "MovieSelection_Succesful"}, SourceLine=55)]
+                "MovieSelection_Succesful"}, SourceLine=56)]
         public virtual void ValidInputsInMovieSelection()
         {
             string[] tagsOfScenario = new string[] {
                     "MovieSelection_Succesful"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Valid inputs in movie selection", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 56
+#line 57
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -409,13 +411,13 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 57
+#line 58
  testRunner.Given("Movie information page is diplayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 58
+#line 59
  testRunner.When("Movie, Date and Time are selected", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 59
+#line 60
  testRunner.Then("Display Success message and Enable button for seat selection", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -423,14 +425,14 @@ this.ScenarioInitialize(scenarioInfo);
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Invalid input during movie selection", new string[] {
-                "MovieSelection_Unsuccesful"}, SourceLine=61)]
+                "MovieSelection_Unsuccesful"}, SourceLine=62)]
         public virtual void InvalidInputDuringMovieSelection()
         {
             string[] tagsOfScenario = new string[] {
                     "MovieSelection_Unsuccesful"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Invalid input during movie selection", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 62
+#line 63
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -450,13 +452,13 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 63
+#line 64
  testRunner.Given("Movie information page is diplayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 64
+#line 65
  testRunner.When("invalid inputs are selected", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 65
+#line 66
  testRunner.Then("Display error message and keep seat selection button disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -479,7 +481,7 @@ this.ScenarioInitialize(scenarioInfo);
             argumentsOfScenario.Add("Time", time);
             argumentsOfScenario.Add("Msg", msg);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("No show is available", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 68
+#line 69
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -499,13 +501,13 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 69
+#line 70
  testRunner.Given("Movie information page is diplayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 70
+#line 71
  testRunner.When("No shows are available for selected date and time and movie", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 71
+#line 72
  testRunner.Then("Display error message and keep seat selection button disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -513,47 +515,38 @@ this.ScenarioInitialize(scenarioInfo);
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("No show is available, Blank", new string[] {
-                "MovieSelection_Unsuccesful"}, SourceLine=74)]
+                "MovieSelection_Unsuccesful"}, SourceLine=76)]
         public virtual void NoShowIsAvailable_Blank()
         {
-#line 68
+#line 69
 this.NoShowIsAvailable("Blank", "", "", "", "ERROR: Please select a movie.", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("No show is available, Blank Date", new string[] {
-                "MovieSelection_Unsuccesful"}, SourceLine=74)]
+                "MovieSelection_Unsuccesful"}, SourceLine=76)]
         public virtual void NoShowIsAvailable_BlankDate()
         {
-#line 68
-this.NoShowIsAvailable("Blank Date", "Movie", "", "", "ERROR: Please select a time.", ((string[])(null)));
-#line hidden
-        }
-        
-        [TechTalk.SpecRun.ScenarioAttribute("No show is available, Blank Show", new string[] {
-                "MovieSelection_Unsuccesful"}, SourceLine=74)]
-        public virtual void NoShowIsAvailable_BlankShow()
-        {
-#line 68
-this.NoShowIsAvailable("Blank Show", "12Dec", "2:00 AM", "", "ERROR: Please select a movie/show.", ((string[])(null)));
-#line hidden
-        }
-        
-        [TechTalk.SpecRun.ScenarioAttribute("No show is available, No show available", new string[] {
-                "MovieSelection_Unsuccesful"}, SourceLine=74)]
-        public virtual void NoShowIsAvailable_NoShowAvailable()
-        {
-#line 68
-this.NoShowIsAvailable("No show available", "12Dec", "2:00 AM", "Movie1", "ERROR: Show selected, proceeding to seat selection.", ((string[])(null)));
+#line 69
+this.NoShowIsAvailable("Blank Date", "Movie1", "", "", "ERROR: Please select a date.", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("No show is available, Blank Time", new string[] {
-                "MovieSelection_Unsuccesful"}, SourceLine=74)]
+                "MovieSelection_Unsuccesful"}, SourceLine=76)]
         public virtual void NoShowIsAvailable_BlankTime()
         {
-#line 68
-this.NoShowIsAvailable("Blank Time", "12Dec", "2:00 AM", "Movie1", "SUCCESS: Show selected, proceeding to seat selection.", ((string[])(null)));
+#line 69
+this.NoShowIsAvailable("Blank Time", "Movie1", "12Dec", "", "ERROR: Please select a time.", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("No show is available, Valid inputs", new string[] {
+                "MovieSelection_Unsuccesful"}, SourceLine=76)]
+        public virtual void NoShowIsAvailable_ValidInputs()
+        {
+#line 69
+this.NoShowIsAvailable("Valid inputs", "Movie1", "12Dec", "2:00 AM", "SUCCESS: Show selected, proceeding to seat selection.", ((string[])(null)));
 #line hidden
         }
         
@@ -571,7 +564,7 @@ this.NoShowIsAvailable("Blank Time", "12Dec", "2:00 AM", "Movie1", "SUCCESS: Sho
             argumentsOfScenario.Add("Seat Count", seatCount);
             argumentsOfScenario.Add("Msg", msg);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Allow Select selection", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 84
+#line 85
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -591,13 +584,13 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 85
+#line 86
  testRunner.Given("Seats are selected", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 86
+#line 87
  testRunner.When("Selected seats are less than Eleven", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 87
+#line 88
  testRunner.Then("Confirm seat selection", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -605,41 +598,41 @@ this.ScenarioInitialize(scenarioInfo);
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Allow Select selection, No seats", new string[] {
-                "Display_SeatSelection"}, SourceLine=90)]
+                "Display_SeatSelection"}, SourceLine=91)]
         public virtual void AllowSelectSelection_NoSeats()
         {
-#line 84
+#line 85
 this.AllowSelectSelection("No seats", "0", "ERROR: Please select a seat.", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Allow Select selection, Invalid seat selection", new string[] {
-                "Display_SeatSelection"}, SourceLine=90)]
+                "Display_SeatSelection"}, SourceLine=91)]
         public virtual void AllowSelectSelection_InvalidSeatSelection()
         {
-#line 84
+#line 85
 this.AllowSelectSelection("Invalid seat selection", "12", "ERROR: Max 10 seats allowed to book.", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Allow Select selection, Valid number of seats", new string[] {
-                "Display_SeatSelection"}, SourceLine=90)]
+                "Display_SeatSelection"}, SourceLine=91)]
         public virtual void AllowSelectSelection_ValidNumberOfSeats()
         {
-#line 84
+#line 85
 this.AllowSelectSelection("Valid number of seats", "4", "SUCCESS: Seat selection Done, proceeding to payment.", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Payment page", new string[] {
-                "Display_PaymentPage"}, SourceLine=95)]
+                "Display_PaymentPage"}, SourceLine=96)]
         public virtual void PaymentPage()
         {
             string[] tagsOfScenario = new string[] {
                     "Display_PaymentPage"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Payment page", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 96
+#line 97
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -659,13 +652,13 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 97
+#line 98
  testRunner.Given("Payment page is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 98
+#line 99
  testRunner.When("Payment details are correct", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 99
+#line 100
  testRunner.Then("Confirm payment.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -673,14 +666,14 @@ this.ScenarioInitialize(scenarioInfo);
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Payment discount for Ted Card", new string[] {
-                "Payment_Calculations"}, SourceLine=101)]
+                "Payment_Calculations"}, SourceLine=102)]
         public virtual void PaymentDiscountForTedCard()
         {
             string[] tagsOfScenario = new string[] {
                     "Payment_Calculations"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Payment discount for Ted Card", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 102
+#line 103
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -700,16 +693,16 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 103
+#line 104
  testRunner.Given("Payment page is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 104
+#line 105
  testRunner.When("User has TedCard", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 105
+#line 106
  testRunner.And("booking count is less than five", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 106
+#line 107
  testRunner.Then("apply ten percentage discount", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -717,14 +710,14 @@ this.ScenarioInitialize(scenarioInfo);
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Payment full discount for Ted Card", new string[] {
-                "Payment_Calculations"}, SourceLine=108)]
+                "Payment_Calculations"}, SourceLine=109)]
         public virtual void PaymentFullDiscountForTedCard()
         {
             string[] tagsOfScenario = new string[] {
                     "Payment_Calculations"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Payment full discount for Ted Card", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 109
+#line 110
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -744,13 +737,13 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 110
+#line 111
    testRunner.Given("Payment page is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 111
+#line 112
  testRunner.When("booking count is equal to five", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 112
+#line 113
  testRunner.Then("apply hundrerd percentage discount", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -758,14 +751,14 @@ this.ScenarioInitialize(scenarioInfo);
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Payment discount for Super Tuesdays", new string[] {
-                "Payment_Calculations"}, SourceLine=114)]
+                "Payment_Calculations"}, SourceLine=115)]
         public virtual void PaymentDiscountForSuperTuesdays()
         {
             string[] tagsOfScenario = new string[] {
                     "Payment_Calculations"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Payment discount for Super Tuesdays", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 115
+#line 116
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -785,10 +778,10 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 116
+#line 117
  testRunner.When("booking day is tuesday", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 117
+#line 118
  testRunner.Then("apply fifty percentage discount", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -811,7 +804,7 @@ this.ScenarioInitialize(scenarioInfo);
             argumentsOfScenario.Add("Valid ted card number provided", validTedCardNumberProvided);
             argumentsOfScenario.Add("discount", discount);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("No Payment discount", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 120
+#line 121
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -831,13 +824,13 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 121
+#line 122
  testRunner.When("booking day is not tuesday", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 122
+#line 123
  testRunner.And("user has no ted card", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 123
+#line 124
  testRunner.Then("apply no discount", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -845,68 +838,68 @@ this.ScenarioInitialize(scenarioInfo);
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("No Payment discount, Variant 0", new string[] {
-                "Payment_Calculations"}, SourceLine=132)]
+                "Payment_Calculations"}, SourceLine=133)]
         public virtual void NoPaymentDiscount_Variant0()
         {
-#line 120
+#line 121
 this.NoPaymentDiscount("No ted membership", "Monday", "0", "no", "0", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("No Payment discount, Variant 1", new string[] {
-                "Payment_Calculations"}, SourceLine=132)]
+                "Payment_Calculations"}, SourceLine=133)]
         public virtual void NoPaymentDiscount_Variant1()
         {
-#line 120
+#line 121
 this.NoPaymentDiscount("No ted membership", "Tuesday", "0", "no", "50", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("No Payment discount, Variant 2", new string[] {
-                "Payment_Calculations"}, SourceLine=132)]
+                "Payment_Calculations"}, SourceLine=133)]
         public virtual void NoPaymentDiscount_Variant2()
         {
-#line 120
+#line 121
 this.NoPaymentDiscount("Ted membership", "Monday", "1", "yes", "10", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("No Payment discount, Variant 3", new string[] {
-                "Payment_Calculations"}, SourceLine=132)]
+                "Payment_Calculations"}, SourceLine=133)]
         public virtual void NoPaymentDiscount_Variant3()
         {
-#line 120
+#line 121
 this.NoPaymentDiscount("Booking on Tuesday", "Tuesday", "1", "yes", "50", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("No Payment discount, Variant 4", new string[] {
-                "Payment_Calculations"}, SourceLine=132)]
+                "Payment_Calculations"}, SourceLine=133)]
         public virtual void NoPaymentDiscount_Variant4()
         {
-#line 120
+#line 121
 this.NoPaymentDiscount("Fifth booking", "Monday", "5", "yes", "100", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("No Payment discount, Variant 5", new string[] {
-                "Payment_Calculations"}, SourceLine=132)]
+                "Payment_Calculations"}, SourceLine=133)]
         public virtual void NoPaymentDiscount_Variant5()
         {
-#line 120
+#line 121
 this.NoPaymentDiscount("Fifth booking on Tuesday", "Tuesday", "5", "yes", "100", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Payment confirmation", new string[] {
-                "Display_PaymentConfirmation"}, SourceLine=142)]
+                "Display_PaymentConfirmation"}, SourceLine=143)]
         public virtual void PaymentConfirmation()
         {
             string[] tagsOfScenario = new string[] {
                     "Display_PaymentConfirmation"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Payment confirmation", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 143
+#line 144
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -926,25 +919,25 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 144
+#line 145
  testRunner.Given("Payment has confirmed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 145
- testRunner.Then("Display Payment confirmation and Print ticket option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 146
+ testRunner.Then("Display Payment confirmation and Print ticket button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Send booking details via SMS", new string[] {
-                "Send_SMS_Successful"}, SourceLine=148)]
+                "Send_SMS_Successful"}, SourceLine=149)]
         public virtual void SendBookingDetailsViaSMS()
         {
             string[] tagsOfScenario = new string[] {
                     "Send_SMS_Successful"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Send booking details via SMS", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 149
+#line 150
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -964,13 +957,16 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 150
- testRunner.Given("Payment has confirmed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
 #line 151
- testRunner.When("Valid phone number is provided", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Given("Print Ticket button is pressed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 152
+ testRunner.When("Valid phone number is provided", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 153
+ testRunner.And("Send button is pressed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 154
  testRunner.Then("Send SMS to given number.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -991,7 +987,7 @@ this.ScenarioInitialize(scenarioInfo);
             argumentsOfScenario.Add("Seat Count", seatCount);
             argumentsOfScenario.Add("Msg", msg);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("When invalid phone number is provided.", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 155
+#line 157
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -1011,13 +1007,16 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 156
- testRunner.Given("Payment has confirmed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 158
+ testRunner.Given("Print Ticket button is pressed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 157
+#line 159
  testRunner.When("Invalid phone number is provided", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 158
+#line 160
+ testRunner.And("Send button is pressed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 161
  testRunner.Then("Error message shall be shown.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -1025,28 +1024,28 @@ this.ScenarioInitialize(scenarioInfo);
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("When invalid phone number is provided., No seats", new string[] {
-                "Send_SMS_Unsuccessful"}, SourceLine=161)]
+                "Send_SMS_Unsuccessful"}, SourceLine=164)]
         public virtual void WhenInvalidPhoneNumberIsProvided__NoSeats()
         {
-#line 155
+#line 157
 this.WhenInvalidPhoneNumberIsProvided_("No seats", "0", "ERROR: Please select a seat.", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("When invalid phone number is provided., Invalid seat selection", new string[] {
-                "Send_SMS_Unsuccessful"}, SourceLine=161)]
+                "Send_SMS_Unsuccessful"}, SourceLine=164)]
         public virtual void WhenInvalidPhoneNumberIsProvided__InvalidSeatSelection()
         {
-#line 155
+#line 157
 this.WhenInvalidPhoneNumberIsProvided_("Invalid seat selection", "12", "ERROR: Max 10 seats allowed to book.", ((string[])(null)));
 #line hidden
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("When invalid phone number is provided., Valid number of seats", new string[] {
-                "Send_SMS_Unsuccessful"}, SourceLine=161)]
+                "Send_SMS_Unsuccessful"}, SourceLine=164)]
         public virtual void WhenInvalidPhoneNumberIsProvided__ValidNumberOfSeats()
         {
-#line 155
+#line 157
 this.WhenInvalidPhoneNumberIsProvided_("Valid number of seats", "4", "SUCCESS: Seat selection Done, proceeding to payment.", ((string[])(null)));
 #line hidden
         }
