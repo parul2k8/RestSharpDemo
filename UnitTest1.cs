@@ -89,6 +89,7 @@ namespace RestSharpDemo
 
         }
 
+
         [TestMethod]
         public void TestMethodDelete()
         {
@@ -112,7 +113,7 @@ namespace RestSharpDemo
             request.AddParameter("password", "pistol");
 
             var response = client.Execute(request);
-            NUnit.Framework.Assert.That((int)response.StatusCode, Is.GreaterThan(200));
+            NUnit.Framework.Assert.That((int)response.StatusCode, Is.EqualTo(200));
 
         }
 
@@ -139,7 +140,7 @@ namespace RestSharpDemo
             request.AddParameter("password", "cityslicka");
 
             var response = client.Execute(request);
-            NUnit.Framework.Assert.That((int)response.StatusCode, Is.GreaterThan(200));
+            NUnit.Framework.Assert.That((int)response.StatusCode, Is.EqualTo(200));
 
         }
     }
