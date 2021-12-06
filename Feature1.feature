@@ -1,7 +1,5 @@
 ﻿Feature: Login
 
-In order to book tickets in Ted cinemas user can either do registration or
-can simply book tickets without any login/ registration.
 Login->MovieSelection->SeatSelection->Payment->printTickets->SMS
 
 @Registarion_Successfull
@@ -21,7 +19,7 @@ Scenario: Invalid data entered in User registration for ticket booking
  | name             | username | password | Msg                                                    |
  | Blank Username   |          | password | ERROR: The username field is empty.                    |
  | Blank Password   | test2    |          | ERROR: The password field is empty.                    |
- | invalid Password | test2    | $%GGH    | ERROR: Password doesnt follow the password policy.     |
+ | invalid Password | test2    | $&*(^%   | ERROR: Password doesnt follow the password policy.     |
  | invalid username | test     | password | ERROR: Username already exists.                        |
  | valid credentials| test1    | password | SUCCESS: User registration succesful.                  |
 
@@ -41,7 +39,7 @@ Scenario: Invalid credentials entered in login for ticket booking
  | name             | username | password | Msg                                                    |
  | Blank Username   |          | password | ERROR: The username field is empty.                    |
  | Blank Password   | admin    |          | ERROR: The password field is empty.                    |
- | invalid Password | admin    | $%GGH    | ERROR: Wrong password. Forgot passowrd?                |
+ | invalid Password | admin    | $%*GH    | ERROR: Wrong password. Forgot passowrd?                |
  | invalid username | test     | password | ERROR: User does not exists.                           |
  | valid credentials| test1    | password | SUCCESS: login succesful.                              |
 
@@ -72,7 +70,7 @@ Scenario: No show is available
 	Then Display error message and keep seat selection button disabled
 
 	Examples: 
-	Assumption : Shows with seats available >1 shall only be displayed for selection.
+	Assumption : Shows having seats avilable shall only be displayed for selection.
  | name              | Show   | Date  | Time    | Msg                                                                   |
  | Blank             |        |       |         | ERROR: Please select a movie.                                         |
  | Blank Date        | Movie1 |       |         | ERROR: Please select a date.                                          |
@@ -103,13 +101,13 @@ Scenario: Payment page
 Scenario: Payment discount for Ted Card 
 	Given Payment page is displayed
 	When User has TedCard
-	And booking count is less than five
+	And booking count is not completely divisible by five
 	Then apply ten percentage discount
 
 	@Payment_Calculations
 Scenario: Payment full discount for Ted Card 
    Given Payment page is displayed
-	When booking count is equal to five
+	When booking count is completely divisible by five
 	Then apply hundrerd percentage discount
 
 	@Payment_Calculations
@@ -129,7 +127,6 @@ Scenario: No Payment discount
 	* Either Super tuesday or Ted discounts shall be applied. 
 	* User will have an option to enter their ted card number before providing credit card details
 	  Thus, allowing system to calculate discount before proceessing credit card information.
-	* Booking count shall be reset to zero after 5th booking.
  | name                     | Booking day | Booking Count | Valid ted card number provided | discount |
  | No ted membership        | Monday      | 0             | no                             | 0        |
  | No ted membership        | Tuesday     | 0             | no                             | 50       |
